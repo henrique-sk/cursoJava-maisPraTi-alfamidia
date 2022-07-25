@@ -16,16 +16,18 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int resp = 1;
-        while (resp == 1) {
+        String resp = "s";
+        while (resp.equals("s")) {
             Scanner entrada = new Scanner(System.in);
-            System.out.println("Calcular novo IMC? (1=Sim, 0=Não)");
-            resp = entrada.nextInt();
-            if (resp == 1) {
+            System.out.println("Calcular novo IMC? (s/n)");
+            resp = entrada.nextLine();
+            if (resp.equals("s")) {
                 System.out.println("Entre com o peso em Kg: ");
                 float peso = entrada.nextFloat();
+                entrada.nextLine();
                 System.out.println("Entre com a altura em metros: ");
                 float altura = entrada.nextFloat();
+                entrada.nextLine();
                 calculoImc(peso, altura);
             }
         }
