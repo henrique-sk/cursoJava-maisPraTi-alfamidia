@@ -82,13 +82,12 @@ public class Main {
 //		arrays[3] = 40;
 //		arrays[4] = 50;
 		
-		String[] array = { "Maria", "João", "Henrique"};
+		String[] array = { "Maria", "José", "Henrique"};
 		
-		String[] novoArray = new String[array.length + 3];
+//		String[] novoArray = new String[array.length + 3];		
 		
-		
-		for(int contador = 0; contador < novoArray.length; contador++) {
-			System.out.println(novoArray[contador]);
+		for(int contador = 0; contador < array.length; contador++) {
+			System.out.println(array[contador]);
 		}
 		
 		
