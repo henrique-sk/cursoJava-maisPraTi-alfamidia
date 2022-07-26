@@ -19,7 +19,7 @@ public class Main {
 		System.out.println("1 - listar em ordem");
 		System.out.println("2 - listar invertido");
 		System.out.println("3 - exibir números menores que 5");
-		System.out.println("4 - exibir até o primeiro número menor que 5");
+		System.out.println("4 - exibir até o primeiro número maior que 5");
 		
 		int operacao = entrada.nextInt();
 		
@@ -54,7 +54,5 @@ public class Main {
 				System.out.println("Comando inválido!");
 		}
 		entrada.close();
-
 	}
-
 }
