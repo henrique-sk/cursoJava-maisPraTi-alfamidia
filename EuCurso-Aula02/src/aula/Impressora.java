@@ -1,4 +1,4 @@
-package com.company;
+package aula;
 
 public class Impressora {
 	
