@@ -1,3 +1,11 @@
+//02 - Criar uma classe aluno que receba um nome, nota1, nota2 e nota3, onde o
+//somatório das notas podem chegar no máximo 100.
+//nota1 (max 30)
+//nota2 (max 30)
+//nota3 (max 40)
+//Cria um método que retorne o nome do aluno, sua média, a maior e menor
+//nota
+
 package exercicios;
 
 public class Aluno {
@@ -55,6 +63,5 @@ public class Aluno {
 				" ficou com média " + (soma/3) +
 				". Sua maior nota foi " + maior +
 				" e a menor nota foi " + menor + ".";
-	}
-	
+	}	
 }

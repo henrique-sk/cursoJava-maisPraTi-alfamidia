@@ -1,3 +1,8 @@
+//01 - Criar uma classe Jogador que tenha as propriedades nome, gols, assistências.
+//E os métodos adicionarGol e adicionarAssistencia que receba como
+//argumento as quantidades de gols/assistências.
+//Também criar dois métodos para ver o número de gols e assistências
+
 package exercicios;
 
 public class Jogador {

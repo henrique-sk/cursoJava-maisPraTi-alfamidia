@@ -1,21 +1,14 @@
-//01 - Criar uma classe Jogador que tenha as propriedades nome, gols, assistências.
-//E os métodos adicionarGol e adicionarAssistencia que receba como
-//argumento as quantidades de gols/assistências.
-//Também criar dois métodos para ver o número de gols e assistências
-
-//Criar uma classe aluno que receba um nome, nota1, nota2 e nota3, onde o
-//somatório das notas podem chegar no máximo 100.
-//nota1 (max 30)
-//nota2 (max 30)
-//nota3 (max 40)
-//Cria um método que retorne o nome do aluno, sua média, a maior e menor
-//nota
-
 package exercicios;
 
 public class Main {
 
 	public static void main(String[] args) {
+//		>>> Exexcício 1 <<<
+//		Criar uma classe Jogador que tenha as propriedades nome, gols, assistências.
+//		E os métodos adicionarGol e adicionarAssistencia que receba como
+//		argumento as quantidades de gols/assistências.
+//		Também criar dois métodos para ver o número de gols e assistências
+		
 		Jogador jogador01 = new Jogador("Romário");
 		Jogador jogador02 = new Jogador("Rivaldo");		
 		
@@ -30,6 +23,15 @@ public class Main {
 		System.out.println(jogador02.qtdGols() + " " +
 				jogador02.qtdAssistencias());
 		
+//=====================================================
+//		>>> Exercício 2 <<<
+//		Criar uma classe aluno que receba um nome, nota1, nota2 e nota3, onde o
+//		somatório das notas podem chegar no máximo 100.
+//		nota1 (max 30)
+//		nota2 (max 30)
+//		nota3 (max 40)
+//		Cria um método que retorne o nome do aluno, sua média, a maior e menor
+//		nota
 		
 		Aluno aluno01 = new Aluno("Julio");
 		aluno01.adicionaNota(10);
@@ -46,9 +48,6 @@ public class Main {
 //		Aluno aluno02 = new Aluno("Ana", notas);		
 		
 		System.out.println(aluno01.resultadoAluno());
-		System.out.println(aluno02.resultadoAluno());
-		
-		
+		System.out.println(aluno02.resultadoAluno());		
 	}
-
 }
