@@ -1,10 +1,11 @@
-package com.company;
+package aulas;
 
 import java.util.Scanner;
 
-public class Main {
+public class A8_arraysForESwitch {
+
 	public static void main(String[] args) {
-		Scanner entrada = new Scanner(System.in);
+Scanner entrada = new Scanner(System.in);
 		
 		System.out.println("Entre com o número de posições");
 		int posicoes = entrada.nextInt();
@@ -54,5 +55,7 @@ public class Main {
 				System.out.println("Comando inválido!");
 		}
 		entrada.close();
+
 	}
+
 }

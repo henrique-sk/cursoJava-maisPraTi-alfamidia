@@ -1,6 +1,7 @@
+package aulas;
 import java.util.Scanner;
 
-public class Main {
+public class A4_arraysELoops {
     public static void calculoImc(float peso, float altura) {
         double[] pesosImc = {18.5, 24.9, 29.9, 39.9, 900000};
         // ou float[] pesosImc = {18.5f, 24.9f, 29.9f, 39.9f, 900000f};

@@ -1,12 +1,12 @@
-package com.company;
+package desafios;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void calculoImc(float peso, float altura) {
+public class D2_imcSN {
+
+	public static void calculoImc(float peso, float altura) {
         double[] pesosImc = {18.5, 24.9, 29.9, 39.9, 900000};
         String[] classificacoesImc = {"Magreza", "Normal", "Sobrepeso", "Obesidade", "Obesidade Grave"};
-
         float imc = peso / (altura * altura);
         System.out.println("O IMC é: " + imc);
 
@@ -16,11 +16,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
+    	Scanner entrada = new Scanner(System.in);
         String resp = "s";
         while (resp.equals("s")) {
-            Scanner entrada = new Scanner(System.in);
             System.out.println("Calcular novo IMC? (s/n)");
             resp = entrada.nextLine();
+            
             if (resp.equals("s")) {
                 System.out.println("Entre com o peso em Kg: ");
                 float peso = entrada.nextFloat();
@@ -30,6 +31,7 @@ public class Main {
                 entrada.nextLine();
                 calculoImc(peso, altura);
             }
-        }
+        }        
     }
+
 }

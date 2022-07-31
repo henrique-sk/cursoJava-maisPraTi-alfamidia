@@ -1,11 +1,11 @@
-package com.company;
+package aulas;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class A3_imc1 {
 
-        Scanner entrada = new Scanner(System.in);
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
         System.out.println(("Entre com o peso em Kg: "));
         float peso = entrada.nextFloat();
 
@@ -23,5 +23,7 @@ public class Main {
         else classificacao = "Obesidade Grave";
 
         System.out.println("A classificação é: " + classificacao);
-    }
+
+	}
+
 }
