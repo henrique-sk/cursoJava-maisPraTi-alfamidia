@@ -1,3 +1,5 @@
+package aula01;
+
 import java.util.Scanner;
 
 public class Main {
@@ -11,7 +13,7 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		String nome = "Maria";
-		String nome2 = "Maria";
+		String nome2 = "Arthur";
 		
 		int x = 0, y;
 		
@@ -89,13 +91,7 @@ public class Main {
 		for(int contador = 0; contador < novoArray.length; contador++) {
 			System.out.println(novoArray[contador]);
 		}
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 }
