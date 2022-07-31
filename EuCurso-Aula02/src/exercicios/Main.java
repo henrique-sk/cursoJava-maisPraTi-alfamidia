@@ -29,6 +29,26 @@ public class Main {
 				jogador01.qtdAssistencias());
 		System.out.println(jogador02.qtdGols() + " " +
 				jogador02.qtdAssistencias());
+		
+		
+		Aluno aluno01 = new Aluno("Julio");
+		aluno01.adicionaNota(10);
+		aluno01.adicionaNota(20);
+		aluno01.adicionaNota(30);
+		
+		// Ex. com nota que excede o max
+		Aluno aluno02 = new Aluno("Ana");
+		aluno02.adicionaNota(32);
+		aluno02.adicionaNota(32);
+		aluno02.adicionaNota(42);
+		
+//		double[] notas = {12, 20, 31.6};
+//		Aluno aluno02 = new Aluno("Ana", notas);		
+		
+		System.out.println(aluno01.resultadoAluno());
+		System.out.println(aluno02.resultadoAluno());
+		
+		
 	}
 
 }
