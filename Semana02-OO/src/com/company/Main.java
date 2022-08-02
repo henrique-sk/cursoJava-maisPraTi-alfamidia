@@ -13,6 +13,7 @@ public class Main {
 //		System.out.println("O IMC é " + imc);
 		
 		Imc imc1 = new Imc(80, 2.10);
+		imc1.setPeso(90);
 		System.out.println("A classificação é " + imc1.classificacao());
 		ImcNovo imc2 = new ImcNovo(80, 2.10);
 		System.out.println("A classificação é " + imc2.classificacao());

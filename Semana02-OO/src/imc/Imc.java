@@ -1,10 +1,32 @@
 package imc;
 
 public class Imc {
-	public double peso;
-	public double altura;
-	public double imc;
-	
+	private double peso; // Alt + Shift + S p/ gerar get/set
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		if (peso <= 0) return;
+		this.peso = peso;
+	}
+
+	private double altura; // private - para não dar acesso externo
+	public double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(double altura) {
+		this.altura = altura;
+	}
+
+	// protected double imc; // protected - pode ser usado pela classe herdada (ImcNovo)
+	// ou usar pprivate com getter
+	private double imc;	
+	public double getImc() {
+		return imc;
+	}
+
 	public Imc(double peso, double altura) {
 		this.peso = peso;
 		this.altura = altura;
