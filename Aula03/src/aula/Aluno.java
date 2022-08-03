@@ -52,14 +52,14 @@ public class Aluno {
 			if(nota > 30) {
 				System.out.println("Erro! Nota maior do que o máximo (30)");
 			} else {
-				this.nota1  = nota;
+				this.nota1 = nota;
 			}
 			break;
 		case 2:
 			if(nota > 30) {
 				System.out.println("Erro! Nota maior do que o máximo (30)");
 			} else {
-				this.nota2  = nota;
+				this.nota2 = nota;
 			}
 			break;
 		case 3:
