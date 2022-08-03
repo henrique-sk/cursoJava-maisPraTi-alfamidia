@@ -1,0 +1,2 @@
+- AULA AO VIVO #03 - 01/08/2022
+- Referente à segunda semana do curso.

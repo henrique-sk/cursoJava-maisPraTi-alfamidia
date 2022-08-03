@@ -1,0 +1,2 @@
+- Ptrojeto das aulas gravadas da plataforma Alfamidia.
+- Referente à segunda semana do curso.

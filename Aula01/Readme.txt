@@ -1,0 +1,2 @@
+- AULA AO VIVO #01 - 25/07/2022
+- Referente à primeira semana do curso.

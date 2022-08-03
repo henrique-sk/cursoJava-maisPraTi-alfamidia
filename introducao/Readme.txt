@@ -1,0 +1,2 @@
+- Ptrojeto das aulas gravadas da plataforma Alfamidia.
+- Referente à primeira semana do curso, recapitulando lógica de programação.
