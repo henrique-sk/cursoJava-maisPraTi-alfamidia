@@ -16,14 +16,27 @@ public class ImcLeitura extends Imc{
 		entrada = new Scanner(System.in);
 	}
 	
+	public double lerDouble(String texto) {
+		boolean continuarLeitura = true;
+		double valor = 0;
+		while(continuarLeitura) {
+			System.out.println(texto);
+			try {
+				valor = Double.parseDouble(entrada.nextLine());
+				continuarLeitura = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Entrada com valor inválido!");
+			}
+		}
+		return valor;
+	}
+	
 	public void lerPeso() {
-		System.out.println("Entre com o peso: ");
-		this.setPeso(entrada.nextDouble());
+		this.setPeso(this.lerDouble("Entre com o peso: "));
 	}
 	
 	public void lerAltura() {
-		System.out.println("Entre com a altura: ");
-		this.setAltura(entrada.nextDouble());
+		this.setAltura(this.lerDouble("Entre com a altura: "));
 	}
 	
 }
