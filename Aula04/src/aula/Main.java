@@ -3,6 +3,8 @@ package aula;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		// EXERCICIO: CRIAR UM MÉTODO NA CLASSE PEDIDO PARA REMOVER UM ITEM
 
 		Item item1 = new Item("Xis", 25.00);
 		Item item2 = new Item("Folhado", 5);
@@ -15,6 +17,8 @@ public class Main {
 		pedido.adicionarItem(item1);
 		pedido.adicionarItem(item3);
 		pedido.adicionarItem(item5);
+		
+		pedido.setStatus(StatusPedido.FINALIZADO);
 		
 		System.out.println(pedido);
 

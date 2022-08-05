@@ -18,6 +18,8 @@ public class Main {
 //		
 //		do {
 //			sc.nextLine(); // dar enter para iniciar
+//			// isso deve ser feito por conta de um bug do Scanner,
+//			// que estava pulando o input do nome do aluno
 //			System.out.println("Qual o nome do aluno? ");
 //			String nome = sc.nextLine();
 //			System.out.println("Qual a matrícula do aluno? ");
@@ -49,20 +51,7 @@ public class Main {
 //		parâmetro o item e o valor.
 //		Também deverá ter um método para alterar o status do pedido.
 		
-		Calculadora calculadora = new Calculadora();
 		
-		System.out.println("SOMA");
-		System.out.println(calculadora.somar(15, 10));
-		System.out.println();
-		System.out.println("SUBTRAÇÃO");
-		System.out.println(calculadora.subtrair(15, 10));
-		System.out.println();
-		System.out.println("MULTIPLICAÇÃO");
-		System.out.println(calculadora.multiplicar(15, 10));
-		System.out.println();
-		System.out.println("DIVISÃO");
-		System.out.println(calculadora.dividir(15, 10));
-		System.out.println();
 				
 		
 //=====================================================
@@ -72,10 +61,21 @@ public class Main {
 //		Soma, Subtração, Multiplicação e Divisão.
 //		Use essa classe sem instanciar ela.
 		
+//		Calculadora calculadora = new Calculadora();
+		// com o "static" no método, não precisa instanciar o objeto
 		
-		
-		
-		
+		System.out.println("SOMA");
+		System.out.println(Calculadora.somar(15, 10));
+		System.out.println();
+		System.out.println("SUBTRAÇÃO");
+		System.out.println(Calculadora.subtrair(15, 10));
+		System.out.println();
+		System.out.println("MULTIPLICAÇÃO");
+		System.out.println(Calculadora.multiplicar(15, 10));
+		System.out.println();
+		System.out.println("DIVISÃO");
+		System.out.println(Calculadora.dividir(15, 10));
+		System.out.println();			
 		
 	}
 

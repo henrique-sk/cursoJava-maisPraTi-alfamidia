@@ -42,9 +42,7 @@ public class Aluno {
 		if(notas[2] != 0) {
 			System.out.println("Este aluno já possui as 3 notas.");
 			return;
-		}
-		
-		if(this.getNotas() + nota > 100) {
+		}else if(this.getNotas() + nota > 100) {
 			System.out.println("Não foi possível adicionar esta nova nota. Somatório maior que 100.");
 			System.out.println("Adicione uma nota novamente!!");
 			return;
