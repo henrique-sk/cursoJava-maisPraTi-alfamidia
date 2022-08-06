@@ -14,34 +14,34 @@ public class Main {
 //		ela deve verificar se o somatório será maior que 100, caso for. Deixe uma
 //		mensagem que não foi possível e peça para adicionar novamente uma nota.
 		
-//		int matricula = 0;
-//		
-//		do {
-//			sc.nextLine(); // dar enter para iniciar
-//			// isso deve ser feito por conta de um bug do Scanner,
-//			// que estava pulando o input do nome do aluno
-//			System.out.println("Qual o nome do aluno? ");
-//			String nome = sc.nextLine();
-//			System.out.println("Qual a matrícula do aluno? ");
-//			matricula = sc.nextInt();
-//			
-//			if(matricula == 0) {
-//				break;
-//			}
-//			
-//			Aluno aluno = new Aluno(nome, matricula);
-//			
-//			for (int i = 0; i < 3; i++) {
-//				System.out.println("Digite nota " + (i+1) + " do aluno: ");
-//				double nota = sc.nextDouble();
-//				aluno.adicionarNota(nota);
-//			}
-//			
-//			System.out.println(aluno);
-//			System.out.println("=====================");
-//			
-//			
-//		}while(matricula != 0);
+		int matricula = 0;
+		
+		do {
+			sc.nextLine(); // dar enter para iniciar
+			// isso deve ser feito por conta de um bug do Scanner,
+			// que estava pulando o input do nome do aluno
+			System.out.println("Qual o nome do aluno? ");
+			String nome = sc.nextLine();
+			System.out.println("Qual a matrícula do aluno? ");
+			matricula = sc.nextInt();
+			
+			if(matricula == 0) {
+				break;
+			}
+			
+			Aluno aluno = new Aluno(nome, matricula);
+			
+			for (int i = 0; i < 3; i++) {
+				System.out.println("Digite nota " + (i+1) + " do aluno: ");
+				double nota = sc.nextDouble();
+				aluno.adicionarNota(nota);
+			}
+			
+			System.out.println(aluno);
+			System.out.println("=====================");
+			
+			
+		}while(matricula != 0);
 		
 				
 //=====================================================
