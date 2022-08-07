@@ -1,4 +1,4 @@
-package exercicios;
+package exercicio1;
 
 public class Main {
 
@@ -9,22 +9,16 @@ public class Main {
 //		ela deve verificar se o somatório será maior que 100, caso for. Deixe uma
 //		mensagem que não foi possível e peça para adicionar novamente uma nota.
 
-		Aluno aluno01 = new Aluno("Carlos", 45213);
+		Aluno aluno01 = new Aluno("Raul", 65);
+		aluno01.adicionarNota(25);
+		aluno01.adicionarNota(35);
+		aluno01.adicionarNota(20);
 		
 		
+		System.out.println(aluno01);
 		
 		
-		
-//=====================================================
-//		>>> Exercício 2 <<<
-		
-		
-		
-		
-		
-//=====================================================
-//		>>> Exercício 3 <<<
-		
+
 	}
 
 }
