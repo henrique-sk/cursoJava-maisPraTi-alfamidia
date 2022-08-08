@@ -1,5 +1,7 @@
 package aula;
 
+import java.util.Objects;
+
 public class Item {
 	private String nome;
 	private double valor;
@@ -28,6 +30,28 @@ public class Item {
 	public String toString() {
 		return this.nome;
 	}
-	
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, valor);
+	}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// CORREÇÃO:
+// EXERCICIO: CRIAR UM MÉTODO NA CLASSE PEDIDO PARA REMOVER UM ITEM
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Item other = (Item) obj;
+		return Objects.equals(nome, other.nome)
+				&& Double.doubleToLongBits(valor) == Double.doubleToLongBits(other.valor);
+	}
+	
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
 }

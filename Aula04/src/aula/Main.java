@@ -5,8 +5,6 @@ import java.util.Arrays;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		// EXERCICIO: CRIAR UM MÉTODO NA CLASSE PEDIDO PARA REMOVER UM ITEM
 
 		Item item1 = new Item("Xis", 25.00);
 		Item item2 = new Item("Folhado", 5);
@@ -19,35 +17,36 @@ public class Main {
 		pedido1.adicionarItem(item1);
 		pedido1.adicionarItem(item3);
 		pedido1.adicionarItem(item5);
+		pedido1.adicionarItem(item5);
 		
-//		pedido1.setStatus(StatusPedido.FINALIZADO);
+		pedido1.removeItem(item5);
+		pedido1.removeItem(item1);
+		
+		pedido1.setStatus(StatusPedido.FINALIZADO);
 		
 		System.out.println(pedido1);
-
-		System.out.println(pedido1.retornaItens());
+		
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// EXERCICIO: CRIAR UM MÉTODO NA CLASSE PEDIDO PARA REMOVER UM ITEM
+//		System.out.println(pedido1.retornaItens());
 		
 //		System.out.println(pedido1.getItens()[2]);
 		
-		System.out.println(pedido1.verificarItem(item3));
+//		System.out.println(pedido1.verificarItem(item3));
 		
-		System.out.println(Arrays.toString(pedido1.getItens()));
+//		System.out.println(Arrays.toString(pedido1.getItens()));
 		
-		System.out.println();
-		
-//		Object[] src = pedido1.getItens();
-//		
-//		String[] dest =  new String[src.length];
-//		System.arraycopy(src, 0, dest, 0, src.length);
-//		System.out.println(Arrays.toString(dest));
-		
+//		System.out.println();
 		
 //		String testeArray[] = pedido1.getItens();
 		
 //		System.out.println(testeArray);
 				
-//		removerItem(pedido1, 1);
+//		pedido1.removerItem(pedido1.getItens(), 1);
 		
 //		System.out.println(Arrays.toString(testeArray));
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		
 	}
 
 }
