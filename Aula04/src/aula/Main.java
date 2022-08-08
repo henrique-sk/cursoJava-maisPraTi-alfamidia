@@ -1,5 +1,7 @@
 package aula;
 
+import java.util.Arrays;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,16 +14,40 @@ public class Main {
 		Item item4 = new Item("Suco", 15);
 		Item item5 = new Item("Alaminuta", 25);
 		
-		Pedido pedido = new Pedido();
+		Pedido pedido1 = new Pedido();
 		
-		pedido.adicionarItem(item1);
-		pedido.adicionarItem(item3);
-		pedido.adicionarItem(item5);
+		pedido1.adicionarItem(item1);
+		pedido1.adicionarItem(item3);
+		pedido1.adicionarItem(item5);
 		
-		pedido.setStatus(StatusPedido.FINALIZADO);
+//		pedido1.setStatus(StatusPedido.FINALIZADO);
 		
-		System.out.println(pedido);
+		System.out.println(pedido1);
 
+		System.out.println(pedido1.retornaItens());
+		
+//		System.out.println(pedido1.getItens()[2]);
+		
+		System.out.println(pedido1.verificarItem(item3));
+		
+		System.out.println(Arrays.toString(pedido1.getItens()));
+		
+		System.out.println();
+		
+//		Object[] src = pedido1.getItens();
+//		
+//		String[] dest =  new String[src.length];
+//		System.arraycopy(src, 0, dest, 0, src.length);
+//		System.out.println(Arrays.toString(dest));
+		
+		
+//		String testeArray[] = pedido1.getItens();
+		
+//		System.out.println(testeArray);
+				
+//		removerItem(pedido1, 1);
+		
+//		System.out.println(Arrays.toString(testeArray));
 	}
 
 }
