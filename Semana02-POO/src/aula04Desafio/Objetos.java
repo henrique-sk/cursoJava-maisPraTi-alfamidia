@@ -11,7 +11,7 @@ public class Objetos {
 
 	@Override
 	public String toString() {
-		return "(" + valor1 + ", " + valor2 + ")";
+		return "(" + this.valor1 + ", " + this.valor2 + ")";
 	}	
 
 }
