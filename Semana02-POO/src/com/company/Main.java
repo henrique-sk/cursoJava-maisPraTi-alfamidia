@@ -35,6 +35,10 @@ public class Main {
 		System.out.println("valores são " + obj2.getValor1() +
 				 " e " + obj2.calcula() + ".");
 		
+		// precisa do toString na classe para transformaro objeto em string
+		System.out.println("Este objeto é: " + obj1);
+		System.out.println("Este objeto é: " + obj2);
+		
 	}
 
 }

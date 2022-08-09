@@ -33,5 +33,11 @@ public class Objetos {
 		return valor1 * Objetos.valor2;
 	}
 	
+	public String toString() {
+		return "O valor 1 é " + this.valor1 +
+				" e o valor estático valor2 é " + Objetos.valor2 + 
+				".";
+	}
+	
 	
 }
