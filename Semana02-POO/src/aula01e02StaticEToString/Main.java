@@ -1,4 +1,4 @@
-package aula01e02StaticeToString;
+package aula01e02StaticEToString;
 
 public class Main {
 
