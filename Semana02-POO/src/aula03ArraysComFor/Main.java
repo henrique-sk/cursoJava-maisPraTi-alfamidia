@@ -1,4 +1,4 @@
-package aula03;
+package aula03ArraysComFor;
 
 public class Main {
 

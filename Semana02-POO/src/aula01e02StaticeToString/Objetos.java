@@ -1,4 +1,4 @@
-package com.company;
+package aula01e02StaticeToString;
 
 public class Objetos {
 	int valor1;
