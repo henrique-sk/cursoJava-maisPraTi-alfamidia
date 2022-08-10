@@ -66,23 +66,6 @@ public class Pedido {
 	
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // EXERCICIO: CRIAR UM MÉTODO NA CLASSE PEDIDO PARA REMOVER UM ITEM
-//	public int verificarItem(Item item) {
-//		int position = -1;
-//		for(int i = 0; i < this.itens.length; i++) {
-//			if (this.itens[i] == item) {
-//				position = i;
-//			}
-//		}
-//		return position;
-//	}
-//	
-//	public static int[] removerItem(int[] itens, int posicao) {
-//		if (itens == null || posicao < 0 || posicao <= itens.length) {
-//			return itens;
-//		}
-//		return IntStream.range(0, itens.length).filter(i -> i != posicao).map(i -> itens[i]).toArray();
-//	}
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // \/\/\/\/\/\/\/     CORREÇÃO:     \/\/\/\/\/\/\/
 	
 	public void removeItem(Item item) {

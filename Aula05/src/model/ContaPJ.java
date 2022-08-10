@@ -5,6 +5,8 @@ public class ContaPJ extends Conta{
 	private final double LIMITE_EMPRESTIMO = 5000;
 	private final double JUROS = 5;
 
+	// se a classe pai tiver apenas um construtor,
+	// a classe filha tb precisa ter um construtor igual
 	public ContaPJ(String titular, double valor) {
 		super(titular, valor);
 		// esse super seria como um "this"
@@ -18,7 +20,7 @@ public class ContaPJ extends Conta{
 		}
 	}
 
-	//Sobreposição
+	// Sobreposição
 	@Override
 	public String toString() {
 		// não é necessário o uso do "super."

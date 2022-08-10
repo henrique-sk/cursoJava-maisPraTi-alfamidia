@@ -18,6 +18,9 @@ public class Main {
 		pedido1.adicionarItem(item3);
 		pedido1.adicionarItem(item5);
 		pedido1.adicionarItem(item5);
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// EXERCICIO: CRIAR UM MÉTODO NA CLASSE PEDIDO PARA REMOVER UM ITEM
 		
 		pedido1.removeItem(item5);
 		pedido1.removeItem(item1);
@@ -25,27 +28,6 @@ public class Main {
 		pedido1.setStatus(StatusPedido.FINALIZADO);
 		
 		System.out.println(pedido1);
-		
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// EXERCICIO: CRIAR UM MÉTODO NA CLASSE PEDIDO PARA REMOVER UM ITEM
-//		System.out.println(pedido1.retornaItens());
-		
-//		System.out.println(pedido1.getItens()[2]);
-		
-//		System.out.println(pedido1.verificarItem(item3));
-		
-//		System.out.println(Arrays.toString(pedido1.getItens()));
-		
-//		System.out.println();
-		
-//		String testeArray[] = pedido1.getItens();
-		
-//		System.out.println(testeArray);
-				
-//		pedido1.removerItem(pedido1.getItens(), 1);
-		
-//		System.out.println(Arrays.toString(testeArray));
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		
 	}
 

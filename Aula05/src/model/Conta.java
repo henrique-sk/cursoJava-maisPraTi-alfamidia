@@ -34,7 +34,7 @@ public class Conta {
 	
 	public void sacar(double valor) {
 		if(this.saldo - valor >= 0) {
-			saldo -= valor;
+			this.saldo -= valor;
 		}else if((this.saldo + valor) < this.LIMITE_EMPRESTIMO){
 			this.saldo -= valor + (valor * (JUROS / 100));
 		}
@@ -45,8 +45,6 @@ public class Conta {
 		return "Conta [titular=" + titular +
 				", saldo=" + saldo +
 				", limiteEmprestimo=" + LIMITE_EMPRESTIMO + "]";
-	}
-	
-	
+	}	
 
 }
