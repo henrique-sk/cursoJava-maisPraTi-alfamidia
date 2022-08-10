@@ -9,7 +9,7 @@ public class Conta {
 	
 	public Conta(String titular, double valor) {
 		this.titular = titular;
-		saldo = valor;
+		this.saldo = valor;
 	}
 	
 	public String getTitular() {
@@ -40,7 +40,6 @@ public class Conta {
 		}
 	}
 
-	@Override
 	public String toString() {
 		return "Conta [titular=" + titular +
 				", saldo=" + saldo +

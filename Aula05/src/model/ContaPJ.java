@@ -14,7 +14,7 @@ public class ContaPJ extends Conta{
 	
 	public void sacar(double valor) {
 		if(this.saldo - valor >= 0) {
-			saldo -= valor;
+			this.saldo -= valor;
 		}else if((this.saldo + valor) < this.LIMITE_EMPRESTIMO){
 			this.saldo -= valor + (valor * (this.JUROS / 100));
 		}
