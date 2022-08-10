@@ -1,4 +1,4 @@
-package exercicios;
+package exercicios.ex02;
 
 public class Felinos extends Animal {
 	

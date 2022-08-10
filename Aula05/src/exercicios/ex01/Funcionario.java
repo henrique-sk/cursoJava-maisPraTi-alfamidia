@@ -1,4 +1,4 @@
-package exercicios;
+package exercicios.ex01;
 
 // >>> Exexcício 1 <<<
 // Cria uma classe do tipo Funcionario, com os campos: nome, função e cargo.

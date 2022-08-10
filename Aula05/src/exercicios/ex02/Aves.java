@@ -1,21 +1,21 @@
-package exercicios;
+package exercicios.ex02;
 
-public class Primatas extends Animal {
+public class Aves extends Animal {
 	
-	private final String ORDEM = "Primates";
+	private final String ORDEM = "Passeriformes";
 	
-	public Primatas(String nome, int quantidade) {
+	public Aves(String nome, int quantidade) {
 		super(nome, quantidade);
 	}
-
-	@Override
-	public void setAreaZoo(int quantidade) {
-			this.areaZoo = quantidade * 300;
-	}
 	
 	@Override
+	public void setAreaZoo(int quantidade) {
+			this.areaZoo = quantidade * 900;
+	}
+
+	@Override
 	public String toString() {
-		return "Primata [nome=" + super.nome +
+		return "Ave [nome=" + super.nome +
 				", Ordem=" + this.ORDEM +
 				", Quantidade=" + super.quantidade +
 				", Área usada no Zoo (m²)=" + this.areaZoo +"]";

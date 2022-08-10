@@ -1,4 +1,4 @@
-package exercicios;
+package exercicios.ex02;
 
 //>>> Exexcício 2 <<<
 //Crie uma classe Animal, depois crie classes filhas a partir desta classe.
