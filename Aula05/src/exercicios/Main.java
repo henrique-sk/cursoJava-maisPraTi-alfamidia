@@ -68,17 +68,17 @@ public class Main {
 // 
 // programador 5% (0.05), contador 3% (0.03), administrador 6% (0.06).
 		
-		FuncionarioEx03 funcionario1 = new Programador("Henrique", 80, 8);
-		FuncionarioEx03 funcionario2 = new Administrador("Ana", 70, 3);
-		FuncionarioEx03 funcionario3 = new Contador("Flávia", 100, 4);
-		
-		ArrayList<FuncionarioEx03> funcionarios = new ArrayList<FuncionarioEx03>(Arrays
-				.asList(new FuncionarioEx03[]
-						{funcionario1, funcionario2, funcionario3}));
-		
-		for(FuncionarioEx03 funcionario : funcionarios) {
-			System.out.println(funcionario);
-		}
+//		FuncionarioEx03 funcionario1 = new Programador("Henrique", 80, 8);
+//		FuncionarioEx03 funcionario2 = new Administrador("Ana", 70, 3);
+//		FuncionarioEx03 funcionario3 = new Contador("Flávia", 100, 4);
+//		
+//		ArrayList<FuncionarioEx03> funcionarios = new ArrayList<FuncionarioEx03>(Arrays
+//				.asList(new FuncionarioEx03[]
+//						{funcionario1, funcionario2, funcionario3}));
+//		
+//		for(FuncionarioEx03 funcionario : funcionarios) {
+//			System.out.println(funcionario);
+//		}
 	
 	}
 
