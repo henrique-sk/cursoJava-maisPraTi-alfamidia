@@ -26,6 +26,10 @@ public class Turma {
 	public void setAlunos(List<Aluno> alunos) {
 		this.alunos = alunos;
 	}
+	
+	public void adicionarAluno(Aluno aluno) {
+		this.alunos.add(aluno);
+	}
 
 	public String toString() {
 		return "Turma [professor=" + professor + ", alunos=" + alunos + "]";

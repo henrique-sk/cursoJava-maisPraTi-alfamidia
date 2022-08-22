@@ -20,6 +20,10 @@ public class Main {
 		
 		Turma turma01 = new Turma(professor02);
 		Turma turma02 = new Turma(professor01);
+		turma01.adicionarAluno(aluno01);
+		turma01.adicionarAluno(aluno02);
+		turma02.adicionarAluno(aluno01);
+		turma02.adicionarAluno(aluno02);
 		
 		System.out.println(turma01);
 		System.out.println(turma02);
