@@ -11,20 +11,15 @@ public class Turma {
 		this.professor = professor;
 	}
 	
-	public Professor getProfessor() {
-		return professor;
-	}
-
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
-	}
-
-	public List<Aluno> getAlunos() {
-		return alunos;
-	}
-
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
+	public String retornaAlunos() {
+		String nomes = "";
+		for(Aluno aluno : this.alunos) {
+			if (aluno != null) {
+				nomes += aluno.getMatricula() + " - " +
+			aluno.getNome() + "\n";
+			}
+		}
+		return nomes;
 	}
 	
 	public void adicionarAluno(Aluno aluno) {
@@ -32,9 +27,14 @@ public class Turma {
 	}
 
 	public String mostrarTurma() {
-		return "Turma de " + professor.getDisciplina() +
-				" do(a) professor(a): " + professor.getNome() +
-				"\n Alunos:" + alunos;
+		return "------------------------------------------------------------" +
+				"\nTurma de "  + professor.getDisciplina() +
+				" do(a) professor(a) " + professor.getNome() + ":" +
+				"\n------------------------------------------------------------" +
+				"\nMatrícula - Nome" +
+				"\n------------------------------------------------------------" +
+				"\n" + this.retornaAlunos() +
+				"============================================================";
 	}	
 	
 }
