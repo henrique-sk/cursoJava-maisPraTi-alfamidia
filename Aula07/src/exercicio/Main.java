@@ -11,6 +11,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		Aluno aluno01 = new Aluno("João Pedro", 45212);
+		aluno01.setEndereco("Rua das Camélias, 896");
+		Aluno aluno02 = new Aluno("Camila Santino", 48512, "Rua das Amoras, 876");
+		System.out.println(aluno01);
+		System.out.println(aluno02);
+		
 	}
 
 }
