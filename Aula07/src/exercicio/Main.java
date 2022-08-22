@@ -25,8 +25,8 @@ public class Main {
 		turma02.adicionarAluno(aluno01);
 		turma02.adicionarAluno(aluno02);
 		
-		System.out.println(turma01);
-		System.out.println(turma02);
+		System.out.println(turma01.mostrarTurma());
+		System.out.println(turma02.mostrarTurma());
 		
 	}
 

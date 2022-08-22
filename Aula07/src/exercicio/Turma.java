@@ -32,8 +32,9 @@ public class Turma {
 	}
 
 	public String mostrarTurma() {
-		return "Turma do professor(a) " + professor +
-				", alunos=" + alunos + "]";
+		return "Turma de " + professor.getDisciplina() +
+				" do(a) professor(a): " + professor.getNome() +
+				"\n Alunos:" + alunos;
 	}	
-
+	
 }
