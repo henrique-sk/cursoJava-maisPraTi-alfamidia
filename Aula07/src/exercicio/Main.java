@@ -18,8 +18,11 @@ public class Main {
 		Professor professor01 = new Professor("Alberto da Silva", "Matemática");
 		Professor professor02 = new Professor("Jéssica Tavares", "Física");
 		
-		System.out.println(professor01);
-		System.out.println(professor02);
+		Turma turma01 = new Turma(professor02);
+		Turma turma02 = new Turma(professor01);
+		
+		System.out.println(turma01);
+		System.out.println(turma02);
 		
 	}
 
