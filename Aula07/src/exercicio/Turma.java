@@ -31,8 +31,9 @@ public class Turma {
 		this.alunos.add(aluno);
 	}
 
-	public String toString() {
-		return "Turma [professor=" + professor + ", alunos=" + alunos + "]";
+	public String mostrarTurma() {
+		return "Turma do professor(a) " + professor +
+				", alunos=" + alunos + "]";
 	}	
 
 }
