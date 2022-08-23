@@ -15,13 +15,6 @@ import aula_pt2.repository.AlunoRepository;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		// CRIAR UMA ESTRUTURA COM MAP PARA SIMULAR UM BANCO DE DADOS
-		// CRIE UMA CLASSE CARRO E UMA CLASSE CARROREPOSITORY
-		
-		// O CARRO DEVE CONTER PLACA, MARCA, COR, MARCA E MODELO
-		
-		// AO TENTAR INSERIR
 
 		Scanner sc = new Scanner(System.in);
 		boolean continua = true;
