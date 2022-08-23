@@ -8,7 +8,7 @@ public class Cenario {
 		this.mapa = new int[10][10];
 		this.mapa[1][1] = 1;
 		this.mapa[2][2] = 2;
-		this.desenhos = new String[] {".","x","*"};
+		this.desenhos = new String[] {".","X","*"};
 	}
 	
 	public void desenhaLinha(int[] linha) {
@@ -25,16 +25,9 @@ public class Cenario {
 		}
 	}
 	
+	public void disparo(int x, int y) {
+		this.mapa[y][x] = 1;
+	}
 	
-//	public int[][] getPosicoes() {
-//		return posicoes;
-//	}
-//	public void setPosicoes() {
-//		for (int row = 0; row < 10; row++) {
-//			for (int column = 0; column < 10; column++) {
-//				this.posicoes[row][column] = 0;
-//			}
-//		}
-//		
-//	}
+	
 }
