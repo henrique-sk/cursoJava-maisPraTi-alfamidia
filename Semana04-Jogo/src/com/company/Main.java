@@ -18,7 +18,7 @@ public class Main {
 			int x = Integer.parseInt(numeros[0]);
 			int y = Integer.parseInt(numeros[1]);
 			System.out.println("x = " + x + "\ny = " + y);	
-			mapa.disparo(x,y);
+			continuarPartida = mapa.disparo(x,y);
 			mapa.desenhaCenario();
 		}		
 	}

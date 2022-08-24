@@ -3,8 +3,8 @@ package com.company;
 import java.util.Random;
 
 public class Pecas {
-	public int x;
-	public int y;
+	private int x;
+	private int y;
 	
 	private boolean vivo;
 	
