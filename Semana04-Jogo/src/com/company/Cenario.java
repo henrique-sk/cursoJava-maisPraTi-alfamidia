@@ -34,26 +34,23 @@ public class Cenario {
 		}
 		
 		for(int i = 0; i < 5; i++) {
-			System.out.println((i+1) + "(" + this.inimigos[i].x + "," + this.inimigos[i].y + ")");
+			System.out.println((i+1) + "(" + this.inimigos[i].x + "," +
+		this.inimigos[i].y + ")");
 		}
 	}
 	
 	public void disparo(int x, int y) {
+		double distancia = 100;
+		double dist1;
+		
+		for(Pecas peca : inimigos) {
+			dist1 = peca.disparo(x,y);
+			distancia = (dist1 < distancia) ? dist1 : distancia;
+		}
+		System.out.println("Distância é " + distancia);
 		this.mapa[y][x] = 1;
 	}
 	
-//	public void criaPecas() {
-//		Random gerador = new Random();
-//		int x, y;
-//		for (int i = 0; i < 5; i++) {
-//			x = gerador.nextInt(10);
-//			y = gerador.nextInt(10);
-//			if (this.mapa[x][y] != 3) {
-//				this.mapa[x][y] = 3;
-//			} else {
-//				i--;
-//			}
-//		}
-//	}
+	
 	
 }

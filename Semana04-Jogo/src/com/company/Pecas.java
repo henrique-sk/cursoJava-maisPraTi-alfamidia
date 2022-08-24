@@ -9,8 +9,13 @@ public class Pecas {
 	public Pecas() {
 		Random aleatorio = new Random();
 		this.x = aleatorio.nextInt(10);
-		this.y = aleatorio.nextInt(10);
-		
+		this.y = aleatorio.nextInt(10);	
+	}
+	
+	public double disparo(int x, int y) {
+		double distancia = Math.sqrt( Math.pow((x-this.x),2) +
+				Math.pow((y-this.y),2));
+		return distancia;
 	}
 
 }
