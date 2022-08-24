@@ -7,6 +7,7 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
+		// Interface LIST
 		// A diferença entre o ArrayList e LinkedList está na performace
 
 		// No ArrayList os métodos para buscar dados são mais rápidos
