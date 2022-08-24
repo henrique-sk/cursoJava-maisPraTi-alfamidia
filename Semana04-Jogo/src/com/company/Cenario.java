@@ -44,11 +44,13 @@ public class Cenario {
 		double dist1;
 		
 		for(Pecas peca : inimigos) {
-			dist1 = peca.disparo(x,y);
-			distancia = (dist1 < distancia) ? dist1 : distancia;
+			if (peca.isVivo()) {
+				dist1 = peca.disparo(x,y);
+				distancia = (dist1 < distancia) ? dist1 : distancia;
+			}
 		}
 		System.out.println("Distância é " + distancia);
-		this.mapa[y][x] = 1;
+		this.mapa[y][x] = (distancia>0) ? 1 : 2;
 	}
 	
 	
