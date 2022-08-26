@@ -1,4 +1,4 @@
-package aula;
+package aula_pt1;
 
 public class Aluno {
 	private int matricula;

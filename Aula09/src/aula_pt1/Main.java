@@ -1,4 +1,4 @@
-package aula;
+package aula_pt1;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -32,6 +32,7 @@ public class Main {
 		alunos.put(aluno5.getMatricula(), aluno5);
 		// se passar um novo com a mesma chave, vai substituir
 		alunos.put(111, new Aluno(111, "Greg Mello"));
+		// se passar objeto existente com uma chave diferente, adiciona o mesmo nome com chave informada
 		alunos.put(4569, aluno5);
 		
 		
