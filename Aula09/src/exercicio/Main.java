@@ -25,12 +25,21 @@ public class Main {
 		
 		repository.salvar(carro1);
 		repository.salvar(carro2);
-		System.out.println(repository.buscarTodos());
-		System.out.println("===============================");
+		System.out.println("Modelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
+		"\n---------------------------------------------------------------------------------------------------------------------" +
+				repository.buscarTodos() +
+				"\n=====================================================================================================================");
 		
 		do {
-			System.out.println("Digite a placa do carro (PPP9P99), ou 0 para parar: ");
+			System.out.println("Digite a placa do carro (PPP9P99), ou 0 para encerrar: ");
 			String placa = sc.nextLine();
+			for (Carro carro : repository.buscarTodos()) {
+				if (placa.equals(carro.getPlaca())) {
+					System.out.println("Já existe um carro com a placa informada."
+							+ "\nFavor informar outra placa (PPP9P99), ou 0 para encerrar: ");
+					placa = sc.nextLine();
+				}
+			}
 			if(placa.equals("0")) {
 				break;
 			}
@@ -45,14 +54,15 @@ public class Main {
 			String cor =  sc.nextLine();			
 			
 			Carro carro = new Carro(placa, modelo, marca, cor);
-			repository.salvar(carro);
-			
+			repository.salvar(carro);			
 		}while(continua);
 		
 		System.out.println("Todos carros cadastrados:");
-		System.out.println(repository.buscarTodos());
-		System.out.println("===============================");
-		
+		System.out.println("Modelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
+		"\n---------------------------------------------------------------------------------------------------------------------" +
+						repository.buscarTodos() +
+						"\n=====================================================================================================================");
+				
 		System.out.println("Carro com placa BRA2E19");
 		System.out.println(repository.buscarPorPlaca("BRA2E19"));
 		System.out.println("===============================");
@@ -61,9 +71,11 @@ public class Main {
 		repository.remover("BRA2E19");
 		System.out.println("===============================");
 		
-		System.out.println("Todos carros cadastrados:");
-		System.out.println(repository.buscarTodos());
-		
+		System.out.println("Modelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
+		"\n---------------------------------------------------------------------------------------------------------------------" +
+						repository.buscarTodos() +
+						"\n=====================================================================================================================");
+					
 		sc.close();
 	}
 

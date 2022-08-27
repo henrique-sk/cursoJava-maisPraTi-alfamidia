@@ -46,9 +46,10 @@ public class Carro {
 	}
 
 	public String toString() {
-		return "\nModelo: " + modelo +
-				", Marca: " + marca +
-				", Cor: " + cor;
+		return "\n" + modelo +
+				"\t\t|\t\t" + marca +
+				"\t\t|\t\t" + cor +
+				"\t\t|\t\t" + placa;
 	}	
 
 }
