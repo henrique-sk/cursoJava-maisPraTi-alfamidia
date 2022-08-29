@@ -11,7 +11,7 @@ import exercicio.model.Carro;
 
 public class CarroRepository {
 	
-	public Map<String, Carro> carrosDB;
+	private Map<String, Carro> carrosDB;
 	
 	public CarroRepository() {
 		this.carrosDB = new TreeMap<>();
@@ -33,10 +33,6 @@ public class CarroRepository {
 		return this.carrosDB.get(placa);
 	}
 	
-//	public Carro buscarPorPlaca(String placa) {
-//		return this.carrosDB.get(carro.getMarca());
-//	}
-//	
 	public List<Carro> buscarPorMarca(String marca) {
 		List<Carro> porMarcas = new ArrayList<Carro>();
 		for (Carro carro : carrosDB.values()) {
@@ -44,8 +40,7 @@ public class CarroRepository {
 				porMarcas.add(carro);
 			}
 		}
-		return porMarcas.stream().collect(Collectors.toList());
-		
+		return porMarcas.stream().collect(Collectors.toList());		
 	}
 	
 }

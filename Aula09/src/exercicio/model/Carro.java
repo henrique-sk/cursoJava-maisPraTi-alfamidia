@@ -1,10 +1,10 @@
 package exercicio.model;
 
 public class Carro {
-	public String placa;
-	public String modelo;
-	public String marca;
-	public String cor;
+	private String placa;
+	private String modelo;
+	private String marca;
+	private String cor;
 	
 	public Carro(String placa, String modelo, String marca, String cor) {
 		this.placa = placa;
