@@ -20,11 +20,13 @@ public class Main {
 		boolean continua = true;
 		CarroRepository repository = new CarroRepository();
 		
-		Carro carro1 = new Carro("BRA2E19", "Onyx", "Chevrolet", "prata");
-		Carro carro2 = new Carro("TGD8O12", "Uno", "Fiat", "vermelho");
+		repository.salvar(new Carro("BRA2E19", "Onyx", "Chevrolet", "prata"));
+		repository.salvar(new Carro("TGD8O12", "Uno", "Fiat", "vermelho"));		
+		repository.salvar(new Carro("RGH8L94", "Pulse", "Fiat", "preto"));
+		repository.salvar(new Carro("UJK3R63", "Mobi", "Fiat", "branco"));
+		repository.salvar(new Carro("BST3L06", "T-Cross", "Volkswagen", "amarelo"));
+		repository.salvar(new Carro("LST2C46", "Gol", "Volkswagen", "prata"));
 		
-		repository.salvar(carro1);
-		repository.salvar(carro2);
 		System.out.println("Modelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
 		"\n---------------------------------------------------------------------------------------------------------------------" +
 				repository.buscarTodos() +
