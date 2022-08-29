@@ -59,25 +59,38 @@ public class Main {
 			repository.salvar(carro);			
 		}while(continua);
 		
-		System.out.println("Todos carros cadastrados:");
-		System.out.println("Modelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
+		System.out.println(">>>>> Todos carros cadastrados:" +
+		"\nModelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
 		"\n---------------------------------------------------------------------------------------------------------------------" +
 						repository.buscarTodos() +
 						"\n=====================================================================================================================");
 				
-		System.out.println("Carro com placa BRA2E19");
-		System.out.println(repository.buscarPorPlaca("BRA2E19"));
-		System.out.println("===============================");
+		System.out.println(">>>>> Carro com placa BRA2E1"
+				+ "\nModelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
+				"\n---------------------------------------------------------------------------------------------------------------------" +
+								repository.buscarPorPlaca("BRA2E19") +
+								"\n=====================================================================================================================");
+				
 		
-		System.out.println("Removendo carro com placa BRA2E19");
+		
+		System.out.println(">>>>> Removendo carro com placa BRA2E19");
 		repository.remover("BRA2E19");
 		System.out.println("===============================");
 		
-		System.out.println("Modelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
+		System.out.println(">>>>> Todos carros cadastrados:" +
+		"Modelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
 		"\n---------------------------------------------------------------------------------------------------------------------" +
 						repository.buscarTodos() +
 						"\n=====================================================================================================================");
 					
+		System.out.println(">>>>> Somente carros da marca Fiat"
+				+ "\nModelo\t\t|\t\tMarca\t\t|\t\tCor\t\t|\t\tPlaca" +
+				"\n---------------------------------------------------------------------------------------------------------------------" +
+								repository.buscarPorMarca("Fiat") +
+								"\n=====================================================================================================================");
+				
+		
+		
 		sc.close();
 	}
 

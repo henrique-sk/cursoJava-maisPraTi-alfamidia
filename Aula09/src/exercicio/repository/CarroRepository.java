@@ -1,5 +1,7 @@
 package exercicio.repository;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -29,6 +31,21 @@ public class CarroRepository {
 	
 	public Carro buscarPorPlaca(String placa) {
 		return this.carrosDB.get(placa);
+	}
+	
+//	public Carro buscarPorPlaca(String placa) {
+//		return this.carrosDB.get(carro.getMarca());
+//	}
+//	
+	public List<Carro> buscarPorMarca(String marca) {
+		List<Carro> porMarcas = new ArrayList<Carro>();
+		for (Carro carro : carrosDB.values()) {
+			if (marca.equals(carro.getMarca())) {
+				porMarcas.add(carro);
+			}
+		}
+		return porMarcas.stream().collect(Collectors.toList());
+		
 	}
 	
 }
