@@ -12,9 +12,8 @@ public class Menu {
 		System.out.println("0 - Para sair do sistema");
 	}
 	
-	public static void menuCliente1(){
-		System.out.println("Você já tem cadastro? Digite seu e-mail: ");
-		System.out.println("Digite 2 se você não tem cadastro");
+	public static void menu2(){
+		System.out.println("Digite seu e-mail: ");
 	}
 		
 	public static void menuCliente2(){

@@ -15,8 +15,9 @@ public class Veiculo {
 	private Status status;	
 	
 	public Veiculo(String modelo, String marca, String cor, String placa,
-			String tipo, double valorLocacao, Status status) {
+			String tipo, double valorLocacao) {
 		this.id = Contador.proximoId();
+		
 		this.modelo = modelo;
 		this.marca = marca;
 		this.cor = cor;
@@ -89,6 +90,10 @@ public class Veiculo {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+	
+	public String toString() {
+		return this.id + " - " + this.modelo + " " + this.marca + " " + this.cor + " " + this.valorLocacao;
 	}
 
 	// os enums podem ficar dentro da classe

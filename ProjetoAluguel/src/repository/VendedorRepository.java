@@ -24,7 +24,7 @@ public class VendedorRepository {
 		return this.vendedoresBD.values().stream().collect(Collectors.toList());
 	}
 	
-	public Vendedor buscarPorVendedor(Integer id) {
+	public Vendedor buscarPorId(Integer id) {
 		return this.vendedoresBD.get(id);
 	}
 	

@@ -23,7 +23,7 @@ public class ClienteRepository {
 		return this.clientesBD.values().stream().collect(Collectors.toList());
 	}
 	
-	public Cliente buscarPorCliente(Integer id) {
+	public Cliente buscarPorId(Integer id) {
 		return this.clientesBD.get(id);
 	}
 	

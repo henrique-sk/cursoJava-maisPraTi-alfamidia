@@ -24,7 +24,7 @@ public class VeiculoRepository {
 		return this.veiculosBD.values().stream().collect(Collectors.toList());
 	}
 	
-	public Veiculo buscarPorVeiculo(Integer id) {
+	public Veiculo buscarPorId(Integer id) {
 		return this.veiculosBD.get(id);
 	}
 	
