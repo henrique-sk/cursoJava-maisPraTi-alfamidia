@@ -23,7 +23,7 @@ public class AdministradorRepository {
 		return this.administradoresBD.values().stream().collect(Collectors.toList());
 	}
 	
-	public Administrador buscarPorAdministrador(Integer id) {
+	public Administrador buscarPorId(Integer id) {
 		return this.administradoresBD.get(id);
 	}
 	

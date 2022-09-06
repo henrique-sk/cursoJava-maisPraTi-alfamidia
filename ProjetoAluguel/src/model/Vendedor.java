@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Vendedor extends Pessoa {
 	
-	private final double COMISSAO = 0.1;
+	// public para poder ser chamada em verSalarioComComissao
+	public static final double COMISSAO = 0.1;
 	private double salario;
 	List<Veiculo> veiculosAlugados;
 	
@@ -18,4 +19,13 @@ public class Vendedor extends Pessoa {
 	public double getSalario() {
 		return this.salario;
 	}
+
+	public List<Veiculo> getVeiculosAlugados() {
+		return veiculosAlugados;
+	}
+
+	public void setVeiculosAlugados(List<Veiculo> veiculosAlugados) {
+		this.veiculosAlugados = veiculosAlugados;
+	}
+	
 }
