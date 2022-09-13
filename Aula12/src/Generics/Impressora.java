@@ -29,7 +29,7 @@ public class Impressora {
 	
 	
 	
-	// <?> para o tipo mais genérico possível. Aceita qualquer coisa
+	// <?> para o tipo mais genérico possível. Aceita qualquer coisa (funciona SOMENTE para listas)
 	// EXTENDS se refere a objetos de níveis abaixo ou no mesmo nível
 	// SUPER se refere a objetos de níveis acima (objeto pai)
 	
