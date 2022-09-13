@@ -7,13 +7,14 @@ import exception.SistemaException;
 import model.Cliente;
 import model.Veiculo;
 import model.Vendedor;
-import repository.VendedorRepository;
+import repository.Repository;
+//import repository.VendedorRepository;
 import util.Normaliza;
 
 public class VendedorService {
 	
 	Scanner sc;
-	VendedorRepository repository = new VendedorRepository();
+	Repository<Vendedor> repository = new Repository<>();
 
 	public VendedorService(Scanner sc) {
 		this.sc = sc;
@@ -44,13 +45,20 @@ public class VendedorService {
 			
 			List<Vendedor> vendedoresCadastrados = repository.buscarTodos();
 			
-			for(Vendedor vendedor : vendedoresCadastrados) {
-				if(vendedor.getEmail().equals(Normaliza.normalizaEmail(email))) {
-				return vendedor;
-				}
-			}			
-			return null;
-		}
+//			for(Vendedor vendedor : vendedoresCadastrados) {
+//				if(vendedor.getEmail().equals(Normaliza.normalizaEmail(email))) {
+//				return vendedor;
+//				}
+//			}		
+//
+//			return null;
+			
+			Vendedor vendedor = vendedoresCadastrados.stream()
+					.filter(v -> v.getEmail().equals(Normaliza.normalizaEmail(email)))
+					.findFirst().orElse(null);
+			
+			return vendedor;			
+	}
 
 	public boolean conferirSenha(Vendedor vendedorParam, String senha) {
 		Vendedor vendedor = repository.buscarPorId(vendedorParam.getId());
@@ -65,9 +73,12 @@ public class VendedorService {
 	public void mostrarTodosVendedores() {
 		List<Vendedor> vendedores = repository.buscarTodos();
 		
-		for(Vendedor vendedor : vendedores) {
-			System.out.println(vendedor.getId() + " - " + vendedor.getNome());
-		}
+//		for(Vendedor vendedor : vendedores) {
+//			System.out.println(vendedor.getId() + " - " + vendedor.getNome());
+//		}
+		
+		vendedores.forEach(v -> System.out.println(v.getId() + " - " + v.getNome()));
+		
 	}
 	
 	public void salvarVeiculo(Veiculo veiculo, Integer idVendedor) throws SistemaException {
@@ -86,18 +97,23 @@ public class VendedorService {
 	public void mostrarAlugueisVeiculos(Vendedor vendedor) {
 		List<Veiculo> veiculos = vendedor.getVeiculosAlugados();
 		
-		for(Veiculo veiculo : veiculos) {
-			System.out.println(veiculo);
-		}
+//		for(Veiculo veiculo : veiculos) {
+//			System.out.println(veiculo);
+//		}
+		
+		veiculos.forEach(v -> System.out.println(v));
+		
 	}
 
 	public void verSalarioComComissao(Vendedor vendedor) {
 		List<Veiculo> veiculos = vendedor.getVeiculosAlugados();
-		double totalVendas = 0;
+		double totalVendas = veiculos.stream().mapToDouble(v -> v.getValorLocacao()).sum();
 		
-		for(Veiculo veiculo : veiculos) {
-			totalVendas += veiculo.getValorLocacao();
-		}
+//		double totalVendas = 0;
+//		
+//		for(Veiculo veiculo : veiculos) {
+//			totalVendas += veiculo.getValorLocacao();
+//		}
 		
 		// chama classe Vendedor, pois o atributo é static
 		double comissao = totalVendas * Vendedor.COMISSAO;

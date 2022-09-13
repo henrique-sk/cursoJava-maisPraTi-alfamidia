@@ -7,15 +7,16 @@ import exception.SistemaException;
 import model.Administrador;
 import model.Veiculo;
 import model.Vendedor;
-import repository.AdministradorRepository;
-import repository.VeiculoRepository;
+//import repository.AdministradorRepository;
+import repository.Repository;
+//import repository.VeiculoRepository;
 import util.Normaliza;
 
 public class AdminService {
 	
 	Scanner sc;
 	VeiculoService veiculoService; // injetado de VeiculoService
-	AdministradorRepository repository = new AdministradorRepository();
+	Repository<Administrador> repository = new Repository<>();
 	private VendedorService vendedorService;
 	
 
@@ -70,7 +71,7 @@ public class AdminService {
 		}
 		vendedorService.repository.removerPorId(opcaoVendedor);
 		
-		System.out.println("Veículo removido comm sucesso!!");
+		System.out.println("Vendedor removido com sucesso!!");
 	}
 
 	public Administrador confereEmail(String email) {

@@ -2,7 +2,7 @@ package model;
 
 import util.Contador;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Banco {
 	// classes abstratas não podem ser instanciadas
 	private Integer id;
 	private String nome;

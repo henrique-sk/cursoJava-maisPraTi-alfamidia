@@ -9,12 +9,13 @@ import model.Cliente;
 import model.Veiculo;
 import model.Vendedor;
 import model.Veiculo.Status;
-import repository.VeiculoRepository;
+import repository.Repository;
+//import repository.VeiculoRepository;
 
 public class VeiculoService {
 
 	Scanner sc;
-	VeiculoRepository repository = new VeiculoRepository();
+	Repository<Veiculo> repository = new Repository<>();
 	
 	public VeiculoService(Scanner sc) {
 		this.sc = sc;
@@ -53,11 +54,15 @@ public class VeiculoService {
 	public void buscarTodosVeiculosLivres() {
 		List<Veiculo> todosVeiculos = this.repository.buscarTodos();
 		
-		for(Veiculo veiculo : todosVeiculos) {
-			if(veiculo.getStatus() == Status.LIVRE) {
-				System.out.println(veiculo);
-			}	
-		}		
+//		for(Veiculo veiculo : todosVeiculos) {
+//			if(veiculo.getStatus() == Status.LIVRE) {
+//				System.out.println(veiculo);
+//			}	
+//		}		
+		
+		todosVeiculos.stream().filter(v -> v.getStatus() == Status.LIVRE)
+			.forEach(v -> System.out.println(v));
+		
 	}
 	
 	public Veiculo alugarVeiculoPorID(int id) throws SistemaException {

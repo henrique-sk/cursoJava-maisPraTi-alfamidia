@@ -6,13 +6,14 @@ import java.util.Scanner;
 import exception.SistemaException;
 import model.Cliente;
 import model.Veiculo;
-import repository.ClienteRepository;
+//import repository.ClienteRepository;
+import repository.Repository;
 import util.Normaliza;
 
 public class ClienteService {
 	// tem as dependências injetadas	
 	Scanner sc;
-	ClienteRepository repository = new ClienteRepository();
+	Repository<Cliente> repository = new Repository<>();
 	
 	public ClienteService(Scanner sc) {
 		// injetado, utiliza o mesmo Scanner instanciado no "Principal"
@@ -25,10 +26,20 @@ public class ClienteService {
 		
 		List<Cliente> clientesCadastrados = repository.buscarTodos();
 		
-		for(Cliente cliente : clientesCadastrados) {
-			if(cliente.getEmail().equals(Normaliza.normalizaEmail(email))) {
-				return cliente;
-			}
+//		for(Cliente cliente : clientesCadastrados) {
+//			if(cliente.getEmail().equals(Normaliza.normalizaEmail(email))) {
+//				return cliente;
+//			}
+//		}
+		// Prog FUNCIONAL
+		Cliente cliente = clientesCadastrados.stream()
+				.filter(c -> c.getEmail().equals(Normaliza.normalizaEmail(email)))
+				// ou seja, filtra cada cliente dos clientesCadastrados e verifica se o email fornecido como parâmetro bate com algum já cadastrado
+				.findFirst().orElse(null);
+				// pega o primeiro que for igual, caso contrário retorna null
+		
+		if(cliente != null) {
+			return cliente;
 		}
 		
 		return this.cadastrarCliente(email);
@@ -64,9 +75,11 @@ public class ClienteService {
 	public void buscarCarrosAlugados(Cliente cliente) {
 		List<Veiculo> veiculosAlugados = cliente.getVeiculos();
 		
-		for(Veiculo veiculo : veiculosAlugados) {
-			System.out.println(veiculo);
-		}
+//		for(Veiculo veiculo : veiculosAlugados) {
+//			System.out.println(veiculo);
+//		}
+		
+		veiculosAlugados.forEach( v -> System.out.println(v) );
 	}
 	
 	public void removerVeiculo(Cliente clienteParam, Veiculo veiculoParam) throws SistemaException {

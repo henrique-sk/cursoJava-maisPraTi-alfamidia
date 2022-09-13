@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa implements Banco {
 	
 	List<Veiculo> veiculos;
 
