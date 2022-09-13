@@ -45,9 +45,10 @@ public class Principal {
 		List<String> listaString = listaInteiros.stream()
 				.map((elemento) -> elemento * 9)
 //				.filter((elemento) -> elemento % 2 == 0)
+				// filter é um PREDICATE (ou seja, que espera um boolean) que filtra somente os números pares 
 //				.sorted() // coloca em ordem
-				.distinct() // remove os números repetidos
-				.map((elemento) -> (elemento / 9) + " - " + elemento.toString())
+				.distinct() // remove os números repetidos (no caso o segundo 7)
+				.map(elemento -> (elemento / 9) + " - " + elemento.toString())
 				// MAP recebe um tipo (no caso Integer da List) e retorna outro que for especificado (no caso o String da List)
 				// somente o stream tem o método map
 				.collect(Collectors.toList()); // o collect toList é um método que finaliza, depois dele não se pode fazer mais nada
