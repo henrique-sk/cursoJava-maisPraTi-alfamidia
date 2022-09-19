@@ -38,11 +38,12 @@ public class Main {
 		// OU
 		Map<Integer, Pessoa> mapPessoa2 = listaPessoas.stream()
 				.collect(Collectors.toMap(Pessoa::getCpf, pessoa -> pessoa));
+				// exemplo por referência, precisa da classe e o método get do atributo desejado entre "::"
 		System.out.println(mapPessoa2);
 		// OU
 		Map<Integer, Pessoa> mapPessoa3 = listaPessoas.stream()
-				.collect(Collectors.toMap(Pessoa::getCpf, Pessoa::getPessoa));
-				// esse exemplo funciona pq foi criado o método getPessoa dentro da classe
+				.collect(Collectors.toMap(Pessoa::getCpf, Pessoa::getPessoa));				
+				// aqui funciona pq foi criado o método getPessoa dentro da classe
 		System.out.println(mapPessoa3);
 		
 		// ==================================
