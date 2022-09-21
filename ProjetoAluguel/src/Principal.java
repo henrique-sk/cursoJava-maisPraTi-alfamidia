@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -6,6 +10,8 @@ import model.Administrador;
 import model.Cliente;
 import model.Veiculo;
 import model.Vendedor;
+import repository.CidadeRepository;
+import repository.ConexaoBD;
 //import repository.AdministradorRepository;
 //import repository.ClienteRepository;
 //import repository.VeiculoRepository;
@@ -19,7 +25,28 @@ import exception.SistemaException;
 
 public class Principal {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, SQLException {
+		
+		// TESTE DE CONEXÃO com localhost
+		// pra ver se busca o DB do localhost
+//		ConexaoBD sql = new ConexaoBD();
+//		
+//		Connection con = sql.getConnection();
+//		
+//		Statement st = con.createStatement();
+//		
+//		ResultSet rs = st.executeQuery("show databases");
+//
+//		// enquanto houver um próximo DB, vai buscar
+//		while(rs.next()) {
+//			System.out.println(rs.getString("database"));
+//		}
+		//--- até aqui o TESTE DE CONEXÃO ---
+		
+		// TESTE para listar as cidades
+//		CidadeRepository cidade = new CidadeRepository();
+//		cidade.listarCidades();
+		
 		Scanner sc = new Scanner(System.in);
 		
 		ClienteService clienteService = new ClienteService(sc);

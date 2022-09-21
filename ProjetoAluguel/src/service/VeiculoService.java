@@ -1,5 +1,8 @@
 package service;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,6 +12,7 @@ import model.Cliente;
 import model.Veiculo;
 import model.Vendedor;
 import model.Veiculo.Status;
+import model.Veiculo.Tipo;
 import repository.Repository;
 //import repository.VeiculoRepository;
 
@@ -20,9 +24,9 @@ public class VeiculoService {
 	public VeiculoService(Scanner sc) {
 		this.sc = sc;
 		
-		repository.salvar(new Veiculo("I30", "Hyundai", "Preto", "IXI9076", "carro", 135));
-		repository.salvar(new Veiculo("HB20", "Hyundai", "Branco", "IXI4523", "carro", 145));
-		repository.salvar(new Veiculo("CG 150", "Honda", "Preto", "IXI7076", "moto", 60));
+//		repository.salvar(new Veiculo("I30", "Hyundai", "Preto", "IXI9076", "carro", 135));
+//		repository.salvar(new Veiculo("HB20", "Hyundai", "Branco", "IXI4523", "carro", 145));
+//		repository.salvar(new Veiculo("CG 150", "Honda", "Preto", "IXI7076", "moto", 60));
 	}
 	
 	public void cadastrarVeiculo() {		
@@ -52,7 +56,27 @@ public class VeiculoService {
 	}
 	
 	public void buscarTodosVeiculosLivres() {
-		List<Veiculo> todosVeiculos = this.repository.buscarTodos();
+		List<Veiculo> todosVeiculos = new ArrayList<>();
+//		List<Veiculo> todosVeiculos = this.repository.buscarTodos();
+		
+		try {
+			ResultSet result = this.repository.select("SELECT * FROM veiculos WHERE status = 'LIVRE'");
+			
+			while(result.next()) {
+				String modelo = result.getString("modelo");
+				String marca = result.getString("marca");
+				String placa = result.getString("placa");
+				String cor = result.getString("cor");
+				int id = result.getInt("id");
+				Status status = Status.valueOf(result.getString("status")); // valueOf converte para ENUM
+				Tipo tipo = Tipo.valueOf(result.getString("tipo")); // valueOf converte para ENUM
+				double valorLocacao = result.getDouble("valorLocacao");
+				
+				todosVeiculos.add(new Veiculo(id, modelo, marca, cor, placa, tipo, status, valorLocacao));
+			}
+		} catch (SQLException e) {
+			System.out.println("Erro ao buscar veículos livres: " + e.getMessage());
+		}
 		
 //		for(Veiculo veiculo : todosVeiculos) {
 //			if(veiculo.getStatus() == Status.LIVRE) {
@@ -60,13 +84,42 @@ public class VeiculoService {
 //			}	
 //		}		
 		
-		todosVeiculos.stream().filter(v -> v.getStatus() == Status.LIVRE)
-			.forEach(v -> System.out.println(v));
+//		todosVeiculos.stream().filter(v -> v.getStatus() == Status.LIVRE)
+//			.forEach(v -> System.out.println(v));
+		
+		todosVeiculos.forEach(v -> System.out.println(v));
 		
 	}
 	
 	public Veiculo alugarVeiculoPorID(int id) throws SistemaException {
-		Veiculo veiculo = this.repository.buscarPorId(id);
+//		Veiculo veiculo = this.repository.buscarPorId(id);
+		Veiculo veiculo = null;
+
+		try {
+			PreparedStatement ps = this.repository.prepararSQL("select * from veiculos where id = ?");
+			// A "?" vai ser cubstituído pelo parâmetro que vai ser setado
+			ps.setInt(1, id);
+			// seta o id que se quer
+			// o primeiro argumento deve ser "1"
+
+			ResultSet result = ps.executeQuery(); // Query é para buscar algo
+
+			while (result.next()) {
+				String modelo = result.getString("modelo");
+				String marca = result.getString("marca");
+				String placa = result.getString("placa");
+				String cor = result.getString("cor");
+				int idR = result.getInt("id");
+				Status status = Status.valueOf(result.getString("status")); // valueOf converte para ENUM
+				Tipo tipo = Tipo.valueOf(result.getString("tipo")); // valueOf converte para ENUM
+				double valorLocacao = result.getDouble("valorLocacao");
+				
+				veiculo = new Veiculo(idR, modelo, marca, cor, placa, tipo, status, valorLocacao);
+			}
+		} catch (SQLException e) {
+			System.out.println("Erro ao buscar o veículo por id: " + e.getMessage());
+//			e.printStackTrace();
+		}
 		
 		if(veiculo == null) {
 			throw new SistemaException("Veículo não encontrado!");
@@ -74,7 +127,16 @@ public class VeiculoService {
 		
 		veiculo.setStatus(Status.ALUGADO);
 		
-		this.repository.salvar(veiculo);
+//		this.repository.salvar(veiculo);
+		try {
+			PreparedStatement ps = this.repository.prepararSQL("UPDATE veiculos SET status = 'ALUGADO' where id = ?");
+			ps.setInt(1, id);
+			
+			ps.execute(); // somente execute para alterar algo
+		} catch (SQLException e) {
+			System.out.println("Erro ao atualizar veículo: " + e.getMessage());
+//			e.printStackTrace();
+		}
 		
 		return veiculo;
 	}
