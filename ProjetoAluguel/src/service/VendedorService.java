@@ -81,7 +81,8 @@ public class VendedorService {
 					.prepararSQL("INSERT INTO vendedores_veiculos(vendedor_id, veiculo_id, data_locacao) values (?, ?, ?)");
 			ps.setInt(1, idVendedor);
 			ps.setInt(2, veiculo.getId());
-			ps.setDate(3, new java.sql.Date(new Date().getTime()));
+			ps.setDate(3, new java.sql.Date(new Date().getTime())); // casting
+			// Type casting is when you assign a value of one primitive data type to another type.
 
 			ps.execute();
 		} catch (SQLException e) {

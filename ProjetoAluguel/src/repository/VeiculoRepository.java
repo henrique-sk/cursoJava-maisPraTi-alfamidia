@@ -115,7 +115,7 @@ public class VeiculoRepository {
 			ps.setDouble(7, veiculo.getValorLocacao());
 			ps.setInt(8,  veiculo.getId());
 			
-			ps.execute();			
+			ps.executeUpdate();			
 		} catch (SQLException e) {
 			System.out.println("Erro ao atualizar veículo: " + e.getMessage());
 		}

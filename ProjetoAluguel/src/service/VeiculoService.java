@@ -98,6 +98,7 @@ public class VeiculoService {
 			throw new SistemaException("Veículo não encontrado!");
 		}
 		
+		// para essa comparação (equals) poder acontecer foi criado um método equals na classe Veiculo
 		if(!cliente.getVeiculos().contains(veiculo)) {
 			throw new SistemaException("Você não possui este veículo!");
 		}

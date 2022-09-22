@@ -109,13 +109,13 @@ public class Veiculo implements Banco {
 	public String toString() {
 		return this.id + " - " + this.modelo + " " + this.marca + " " + this.cor + " " + this.valorLocacao;
 	}
-
-	// para poder fazer comparação com o equals
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(cor, id, marca, modelo, placa, status, tipo, valorLocacao);
 	}
 
+	// para poder fazer comparação com o equals
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

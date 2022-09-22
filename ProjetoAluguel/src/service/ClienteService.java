@@ -35,17 +35,12 @@ public class ClienteService {
 
 		List<Cliente> clientesCadastrados = this.clienteRepository.buscar();
 
-//		for(Cliente cliente : clientesCadastrados) {
-//			if(cliente.getEmail().equals(Normaliza.normalizaEmail(email))) {
-//				return cliente;
-//			}
-//		}
 		// Prog FUNCIONAL
 		Cliente cliente = clientesCadastrados.stream().filter(c -> c.getEmail().equals(Normaliza.normalizaEmail(email)))
 				// ou seja, filtra cada cliente dos clientesCadastrados e verifica se o email
 				// fornecido como parâmetro bate com algum já cadastrado
 				.findFirst().orElse(null);
-		// pega o primeiro que for igual, caso contrário retorna null
+		// pega o primeiro que for igual, caso não encontre nenhum, retorna null
 
 		if (cliente != null) {
 			try {
@@ -101,7 +96,7 @@ public class ClienteService {
 		this.clienteRepository.salvar(cliente);
 		
 		try {
-			Thread.sleep(2000l);
+			Thread.sleep(2000l); // para dar tempo de salvar no BD antes de retornat cliente, para evitar NullPointerException
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
