@@ -24,7 +24,7 @@ public class Menu {
 	
 	public static void menuVendedor1() {
 		System.out.println("Digite a opção desejada: ");
-		System.out.println("1 - Ver os carros que você alugou");
+		System.out.println("1 - Ver os vaículos que você alugou");
 		System.out.println("2 - Ver seu salário");
 		System.out.println("3 - Ver seu salário com a comissão atual");
 	}

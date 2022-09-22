@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 import util.Contador;
 
 public class Veiculo implements Banco {
@@ -106,6 +108,27 @@ public class Veiculo implements Banco {
 	
 	public String toString() {
 		return this.id + " - " + this.modelo + " " + this.marca + " " + this.cor + " " + this.valorLocacao;
+	}
+
+	// para poder fazer comparação com o equals
+	@Override
+	public int hashCode() {
+		return Objects.hash(cor, id, marca, modelo, placa, status, tipo, valorLocacao);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Veiculo other = (Veiculo) obj;
+		return Objects.equals(cor, other.cor) && Objects.equals(id, other.id) && Objects.equals(marca, other.marca)
+				&& Objects.equals(modelo, other.modelo) && Objects.equals(placa, other.placa) && status == other.status
+				&& tipo == other.tipo
+				&& Double.doubleToLongBits(valorLocacao) == Double.doubleToLongBits(other.valorLocacao);
 	}
 
 	// os enums podem ficar dentro da classe

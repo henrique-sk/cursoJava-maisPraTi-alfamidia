@@ -24,7 +24,7 @@ public class ConexaoBD {
 		this.url = "jdbc:mysql://" + hostname + "/mais_pra_ti";
 	}
 	
-	public Connection getConnection() {
+	public Connection getConnection() throws SQLException {
 		this.conn = null;
 		try {
 			this.conn = DriverManager.getConnection(this.url, this.username, this.password);
@@ -32,7 +32,11 @@ public class ConexaoBD {
 			System.out.println("Erro ao fazer conexão: " + e.getMessage());
 		}
 		
-		return conn;		
+		if(this.conn == null) {
+			throw new SQLException("Erro ao conectar com banco de dados!!");
+		}
+		
+		return conn;
 	}
 	
 	public void closeConnection() {

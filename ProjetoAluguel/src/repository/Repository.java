@@ -45,7 +45,11 @@ public class Repository<T extends Banco> {
 	
 	public Repository() {
 		this.bancoDeDados = new TreeMap<>();
-		this.con = new ConexaoBD().getConnection();
+		try {
+			this.con = new ConexaoBD().getConnection();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	// recebe um comando sql, trata e retorna resultado da pesquisa

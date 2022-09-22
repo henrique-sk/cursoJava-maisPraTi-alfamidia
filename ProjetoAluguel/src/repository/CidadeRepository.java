@@ -12,7 +12,11 @@ public class CidadeRepository {
 	public CidadeRepository() {
 		ConexaoBD bd = new ConexaoBD();
 		
-		this.conn = bd.getConnection();
+		try {
+			this.conn = bd.getConnection();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	public void listarCidades() {
@@ -29,7 +33,8 @@ public class CidadeRepository {
 				System.out.println(codIbge + " - " + nome + "/" + uf);
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println(e);
+//			e.printStackTrace();
 		}
 		
 	}
