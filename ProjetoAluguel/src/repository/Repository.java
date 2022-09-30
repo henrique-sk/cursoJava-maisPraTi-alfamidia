@@ -23,6 +23,8 @@ public class Repository<T extends Banco> {
 	
 	public void salvar(T t) {
 		// se o objeto T extende Banco, temos certeza de que ele tem o método getId
+		// como a classe é genérica é necessário o uso de interface
+		// , já que não há garantia da existência de um "getId" em uma classe "desconhecida"/genérica		
 		this.bancoDeDados.put(t.getId(), t);
 	}
 	
